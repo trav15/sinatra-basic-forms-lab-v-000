@@ -7,11 +7,11 @@ class App < Sinatra::Base
     erb :index
   end
 
-  post '/new' do
+  get '/new' do
     erb :create_puppy
   end
-
-  get '/display_puppy' do
+  
+  post '/display_puppy' do
     @pupper = Puppy.new(params[:name], params[:breed], params[:age])
     erb :display_puppy
   end
